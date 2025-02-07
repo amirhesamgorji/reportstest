@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-body-tertiary pt-5 px-2 px-md-0" dir="rtl">
+    <div class="col-md-10 mx-auto py-5 px-3 container-reports">
+      <div class="report-wrapper">
+        <img class="reporter-image" src="./User.png" alt="" />
+
+        <div class="report-box report-follow-up p-1 pe-2 pe-sm-3">
+          <span class="report-badge">گزارش پیگیری</span>
+          <span class="reporter-name"> امیر محمد حسین زاده </span>
+
+          <p class="report-text mb-3 ps-2 ps-sm-3">
+            سفره یکبار مصرف در حال پیگیری استعلام ارسال کردم
+          </p>
+
+          <div class="d-flex justify-content-between align-items-end gap-3 gap-md-5">
+            <div class="report-info">
+              <div class="d-flex align-items-center gap-2">
+                <i class="fas fa-calendar"></i>
+                <span>1403/11/18</span>
+              </div>
+
+              <div class="d-flex align-items-center gap-2">
+                <i class="fas fa-user-tie"></i>
+                <span>پيشگامان صنعت فوكا کنزاکس کد مشتری: 1432</span>
+              </div>
+
+              <div class="d-flex align-items-center gap-2">
+                <i class="fas fa-phone-alt"></i>
+                <span>09121720228</span>
+              </div>
+            </div>
+
+            <div class="report-menu__container">
+              <div class="report-menu__icon"><i class="fas fa-ellipsis-v"></i></div>
+              <div class="report-menu__dropdown">
+                <div class="report-menu__item"><i class="fas fa-edit"></i> ویرایش</div>
+                <div class="report-menu__item"><i class="fas fa-trash"></i> حذف</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="report-wrapper">
+        <img class="reporter-image" src="./User.png" alt="" />
+
+        <div class="report-box report-call p-1 pe-2 pe-sm-3">
+          <span class="report-badge">گزارش تماس های ورودی</span>
+          <span class="reporter-name"> آیدا عباسی </span>
+
+          <p class="report-text mb-3 ps-2 ps-sm-3">70 عدد نایلون ضخیم میخواهند</p>
+
+          <div class="d-flex justify-content-between align-items-end gap-3 gap-md-5">
+            <div class="report-info">
+              <div class="d-flex align-items-center gap-2">
+                <i class="fas fa-calendar"></i>
+                <span>1403/11/18</span>
+              </div>
+
+              <div class="d-flex align-items-center gap-2">
+                <i class="fas fa-user-tie"></i>
+                <span>مازیاری</span>
+              </div>
+
+              <div class="d-flex align-items-center gap-2">
+                <i class="fas fa-phone-alt"></i>
+                <span>09371365039</span>
+              </div>
+            </div>
+            <div class="report-menu__container">
+              <div class="report-menu__icon"><i class="fas fa-ellipsis-v"></i></div>
+              <div class="report-menu__dropdown">
+                <div class="report-menu__item"><i class="fas fa-edit"></i> ویرایش</div>
+                <div class="report-menu__item"><i class="fas fa-trash"></i> حذف</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="bootstrap.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const reportMenuIcons = document.querySelectorAll(".report-menu__icon");
+
+        reportMenuIcons.forEach((reportMenuIcon) => {
+          reportMenuIcon.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            document.querySelectorAll(".report-menu__dropdown").forEach((dropdown) => {
+              if (dropdown !== this.nextElementSibling) {
+                dropdown.classList.remove("show");
+              }
+            });
+
+            const reportMenuDropdown = this.nextElementSibling;
+            reportMenuDropdown.classList.contains("show")
+              ? reportMenuDropdown.classList.remove("show")
+              : reportMenuDropdown.classList.add("show");
+          });
+        });
+
+        document.addEventListener("click", function () {
+          document.querySelectorAll(".report-menu__dropdown").forEach((dropdown) => {
+            dropdown.classList.remove("show");
+          });
+        });
+      });
+    </script>
+    <!-- <script src="vendor/glightbox/js/glightbox.js"></script> -->
+  </body>
+</html>
