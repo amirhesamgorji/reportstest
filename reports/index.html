@@ -47,7 +47,9 @@
             </div>
 
             <div class="report-menu__container">
-              <div class="report-menu__icon"><i class="fas fa-ellipsis-v"></i></div>
+              <div class="report-menu__icon">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
               <div class="report-menu__dropdown">
                 <div class="report-menu__item"><i class="fas fa-edit"></i> ویرایش</div>
                 <div class="report-menu__item"><i class="fas fa-trash"></i> حذف</div>
@@ -84,7 +86,9 @@
               </div>
             </div>
             <div class="report-menu__container">
-              <div class="report-menu__icon"><i class="fas fa-ellipsis-v"></i></div>
+              <div class="report-menu__icon">
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
               <div class="report-menu__dropdown">
                 <div class="report-menu__item"><i class="fas fa-edit"></i> ویرایش</div>
                 <div class="report-menu__item"><i class="fas fa-trash"></i> حذف</div>
@@ -97,35 +101,6 @@
 
     <script src="bootstrap.bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const reportMenuIcons = document.querySelectorAll(".report-menu__icon");
-
-        reportMenuIcons.forEach((reportMenuIcon) => {
-          reportMenuIcon.addEventListener("click", function (event) {
-            event.stopPropagation();
-
-            document.querySelectorAll(".report-menu__dropdown").forEach((dropdown) => {
-              if (dropdown !== this.nextElementSibling) {
-                dropdown.classList.remove("show");
-              }
-            });
-
-            const reportMenuDropdown = this.nextElementSibling;
-            reportMenuDropdown.classList.contains("show")
-              ? reportMenuDropdown.classList.remove("show")
-              : reportMenuDropdown.classList.add("show");
-          });
-        });
-
-        document.addEventListener("click", function () {
-          document.querySelectorAll(".report-menu__dropdown").forEach((dropdown) => {
-            dropdown.classList.remove("show");
-          });
-        });
-      });
-    </script>
-    <!-- <script src="vendor/glightbox/js/glightbox.js"></script> -->
+    <script src="./script.js"></script>
   </body>
 </html>

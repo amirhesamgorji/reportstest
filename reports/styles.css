@@ -40,6 +40,31 @@
   transform: translateX(-50%) translateY(0);
 } */
 
+.animate {
+  transition-property: all;
+  opacity: 0;
+}
+
+.animate.fade.show {
+  opacity: 1;
+}
+
+.animate.slide {
+  transform: translateY(1rem);
+}
+.animate.slide.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.animate.zoom {
+  transform: scale(0.8);
+}
+.animate.zoom.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
 body {
   font-family: "b nazanin";
 }
@@ -159,7 +184,7 @@ body {
   color: #6c757d;
   transition: all 0.2s;
   padding: 4px 2px;
-  border-radius: 5px;
+  border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,44 +202,37 @@ body {
 }
 .report-menu__dropdown {
   position: absolute;
-  top: 26px;
+  top: calc(100% + 4px);
   right: 0;
   background-color: #fff;
   border-radius: 8px;
   /* box-shadow: 0 10px 36px rgba(0, 0, 0, 0.1); */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
   flex-direction: column;
   overflow: hidden;
-  visibility: hidden;
   z-index: 10;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: all 0.2s;
-}
-
-.report-menu__dropdown.show {
-  visibility: visible;
-  opacity: 1;
-  transform: scale(1);
+  display: none;
 }
 
 .report-menu__item svg {
-  color: #555;
+  /* color: #555; */
   font-size: 14px;
+  width: 14px;
 }
 
 .report-menu__item {
-  padding: 6px 14px 6px 32px;
-  color: #333;
+  padding: 4px 12px 4px 32px;
+  color: #62748e;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   transition: all 0.3s;
   user-select: none;
 }
 .report-menu__item:hover {
-  background-color: #f1f1f1;
+  color: #1d293d;
+  background-color: #f3f4f6;
 }
 
 @media (max-width: 991px) {
